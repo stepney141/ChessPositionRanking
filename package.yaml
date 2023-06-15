@@ -1,0 +1,112 @@
+name:                chess-position-ranking
+version:             0.1.0.0
+github:              "Lugendre/ChessPositionRanking"
+license:             GPL-2
+author:              "Lugendre"
+maintainer:          "franfranjk@gmail.com"
+copyright:           "2023 Lugendre"
+
+extra-source-files:
+- README.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/Lugendre/ChessPositionRanking#readme>
+
+language: GHC2021
+
+dependencies:
+- base >= 4.7 && < 5
+- array
+- attoparsec
+- containers
+- random
+- split
+- text
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wmissing-export-lists
+- -Wmissing-home-modules
+- -Wpartial-fields
+- -Wredundant-constraints
+
+library:
+  source-dirs: src
+
+executables:
+  count:
+    main:                Main.hs
+    source-dirs:         app/CountChess
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    dependencies:
+    - chess-position-ranking
+  noproms:
+    main:                Main.hs
+    source-dirs:         app/CountNoProms
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    dependencies:
+    - chess-position-ranking
+  cpr:
+    main:                Main.hs
+    source-dirs:         app/Cpr
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    dependencies:
+    - chess-position-ranking
+  legal:
+    main:                Main.hs
+    source-dirs:         app/Legality
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    dependencies:
+    - chess-position-ranking
+  randomFENs:
+    main:                Main.hs
+    source-dirs:         app/RandomFENs
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    dependencies:
+    - chess-position-ranking
+  randomRs:
+    main:                Main.hs
+    source-dirs:         app/RandomRs
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    dependencies:
+    - chess-position-ranking
+  sortFENs:
+    main:                Main.hs
+    source-dirs:         app/SortFENs
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    dependencies:
+    - chess-position-ranking
+
+tests:
+  chess-position-ranking-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    dependencies:
+    - chess-position-ranking

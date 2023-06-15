@@ -1,0 +1,198 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.35.2.
+--
+-- see: https://github.com/sol/hpack
+
+name:           chess-position-ranking
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/Lugendre/ChessPositionRanking#readme>
+homepage:       https://github.com/Lugendre/ChessPositionRanking#readme
+bug-reports:    https://github.com/Lugendre/ChessPositionRanking/issues
+author:         Lugendre
+maintainer:     franfranjk@gmail.com
+copyright:      2023 Lugendre
+license:        GPL-2
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/Lugendre/ChessPositionRanking
+
+library
+  exposed-modules:
+      Chess
+      Chess.FEN
+      Chess.Internal.Board
+      Chess.Internal.FEN
+      Chess.Internal.Game
+      Chess.Internal.Move
+      Chess.Internal.Notation
+      Chess.Internal.Piece
+      Chess.Position
+      Chess.Position.Ranking
+      Chess.UI
+      Data.Ranking
+      Data.Ranking.Batched
+  other-modules:
+      Paths_chess_position_ranking
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      array
+    , attoparsec
+    , base >=4.7 && <5
+    , containers
+    , random
+    , split
+    , text
+  default-language: GHC2021
+
+executable count
+  main-is: Main.hs
+  other-modules:
+      Paths_chess_position_ranking
+  hs-source-dirs:
+      app/CountChess
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts
+  build-depends:
+      array
+    , attoparsec
+    , base >=4.7 && <5
+    , chess-position-ranking
+    , containers
+    , random
+    , split
+    , text
+  default-language: GHC2021
+
+executable cpr
+  main-is: Main.hs
+  other-modules:
+      Paths_chess_position_ranking
+  hs-source-dirs:
+      app/Cpr
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts
+  build-depends:
+      array
+    , attoparsec
+    , base >=4.7 && <5
+    , chess-position-ranking
+    , containers
+    , random
+    , split
+    , text
+  default-language: GHC2021
+
+executable legal
+  main-is: Main.hs
+  other-modules:
+      Paths_chess_position_ranking
+  hs-source-dirs:
+      app/Legality
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts
+  build-depends:
+      array
+    , attoparsec
+    , base >=4.7 && <5
+    , chess-position-ranking
+    , containers
+    , random
+    , split
+    , text
+  default-language: GHC2021
+
+executable noproms
+  main-is: Main.hs
+  other-modules:
+      Paths_chess_position_ranking
+  hs-source-dirs:
+      app/CountNoProms
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts
+  build-depends:
+      array
+    , attoparsec
+    , base >=4.7 && <5
+    , chess-position-ranking
+    , containers
+    , random
+    , split
+    , text
+  default-language: GHC2021
+
+executable randomFENs
+  main-is: Main.hs
+  other-modules:
+      Paths_chess_position_ranking
+  hs-source-dirs:
+      app/RandomFENs
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts
+  build-depends:
+      array
+    , attoparsec
+    , base >=4.7 && <5
+    , chess-position-ranking
+    , containers
+    , random
+    , split
+    , text
+  default-language: GHC2021
+
+executable randomRs
+  main-is: Main.hs
+  other-modules:
+      Paths_chess_position_ranking
+  hs-source-dirs:
+      app/RandomRs
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts
+  build-depends:
+      array
+    , attoparsec
+    , base >=4.7 && <5
+    , chess-position-ranking
+    , containers
+    , random
+    , split
+    , text
+  default-language: GHC2021
+
+executable sortFENs
+  main-is: Main.hs
+  other-modules:
+      Paths_chess_position_ranking
+  hs-source-dirs:
+      app/SortFENs
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts
+  build-depends:
+      array
+    , attoparsec
+    , base >=4.7 && <5
+    , chess-position-ranking
+    , containers
+    , random
+    , split
+    , text
+  default-language: GHC2021
+
+test-suite chess-position-ranking-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_chess_position_ranking
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts
+  build-depends:
+      array
+    , attoparsec
+    , base >=4.7 && <5
+    , chess-position-ranking
+    , containers
+    , random
+    , split
+    , text
+  default-language: GHC2021
