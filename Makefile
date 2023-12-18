@@ -1,4 +1,4 @@
-time :=  /usr/bin/time
+SHELL := /bin/bash
 
 all:	count test1k
 
